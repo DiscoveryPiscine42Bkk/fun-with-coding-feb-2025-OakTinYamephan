@@ -5,6 +5,6 @@ fi
 
 for arg in "$@"
 do
-    mkdir -p "ex$arg"
+    mkdir "ex$arg"
 done
 
