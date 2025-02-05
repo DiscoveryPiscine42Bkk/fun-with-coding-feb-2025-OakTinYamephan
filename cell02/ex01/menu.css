@@ -1,0 +1,83 @@
+/* รีเซ็ตค่าพื้นฐาน */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8e4c3; 
+    color: #4a2c20; 
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #d35400; 
+    padding: 15px 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    font-size: 45px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #fdf2dc; 
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    position: relative;
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fdf2dc; 
+    font-size: 16px;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffcc00; 
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background: #6b3e26; 
+    top: 100%;
+    left: 0;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.dropdown-menu li {
+    list-style: none;
+    text-align: left;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 12px;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fdf2dc; /* สีชีส */
+}
+
+.dropdown-menu a:hover {
+    background: #ffcc00; 
+    color: #4a2c20; 
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
