@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="todo.js" defer></script> <!-- โหลด JavaScript แบบ defer เพื่อให้โหลดหลัง DOM -->
+    <style>
+        /* ตั้งค่าพื้นฐานของหน้า */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;  
+            justify-content: center; 
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        #new {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        #new:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        #ft_list {
+            margin-top: 15px;
+            width: 350px;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        .todo {
+            background-color: #ffeb3b;
+            padding: 12px;
+            margin: 8px 0;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        .todo:hover {
+            background-color: #fdd835;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="new">New</button>
+        <div id="ft_list"></div>
+    </div>
+</body>
+</html>
