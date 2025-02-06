@@ -7,16 +7,16 @@ body {
 button {
     font-size: 20px;
     padding: 15px 30px;
-    border-radius: 25px; /* ทำให้ปุ่มโค้งมน */
-    border: none; /* เอาเส้นขอบออก */
-    background: linear-gradient(to right, #f3f2f2, #a3a3a3); /* เพิ่มสีแบบไล่ระดับ */
-    color: rgb(0, 0, 0); /* กำหนดสีตัวอักษร */
+    border-radius: 25px;
+    border: none; 
+    background: linear-gradient(to right, #f3f2f2, #a3a3a3); 
+    color: rgb(0, 0, 0); 
     cursor: pointer;
-    transition: 0.3s; /* เพิ่มเอฟเฟกต์ตอนโฮเวอร์ */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* เพิ่มเงา */
+    transition: 0.3s; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
 }
 
 button:hover {
-    transform: scale(1.05); /* ขยายขนาดเล็กน้อยเมื่อโฮเวอร์ */
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3); /* เพิ่มเงาตอนโฮเวอร์ */
+    transform: scale(1.05); 
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3); 
 }
