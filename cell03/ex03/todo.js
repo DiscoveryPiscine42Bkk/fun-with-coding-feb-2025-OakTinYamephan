@@ -1,48 +1,46 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const ftList = document.getElementById("ft_list");
-    const newButton = document.getElementById("new");
+document.addEventListener("DOMContentLoaded", loadTodos);
 
-    loadTodos();
+function newTodo() {
+    let task = prompt("Enter a new TO DO:");
+    if (task && task.trim() !== "") {
+        addTodo(task.trim());
+        saveTodos();
+    }
+}
 
-    newButton.addEventListener("click", function () {
-        const todoText = prompt("Enter a new TO DO:");
-        if (todoText) {
-            addTodo(todoText);
-            saveTodos();
-        }
+function addTodo(text) {
+    let ftList = document.getElementById("ft_list");
+
+    let todoDiv = document.createElement("div");
+    todoDiv.className = "todo";
+    todoDiv.textContent = text;
+    todoDiv.addEventListener("click", () => removeTodo(todoDiv));
+
+    ftList.prepend(todoDiv);
+}
+
+function removeTodo(todo) {
+    if (confirm("Do you really want to delete this TO DO?")) {
+        todo.remove();
+        saveTodos();
+    }
+}
+
+function saveTodos() {
+    let todos = [];
+    document.querySelectorAll(".todo").forEach(todo => {
+        todos.push(todo.textContent);
     });
 
-    function addTodo(text) {
-        const div = document.createElement("div");
-        div.className = "todo";
-        div.textContent = text;
+    document.cookie = "todos=" + JSON.stringify(todos) + "; path=/";
+}
 
-        div.addEventListener("click", function () {
-            if (confirm("Do you want to remove this TO DO?")) {
-                div.remove();
-                saveTodos();
-            }
-        });
-
-        ftList.prepend(div); 
+function loadTodos() {
+    let cookies = document.cookie.split("; ");
+    let todoCookie = cookies.find(row => row.startsWith("todos="));
+    
+    if (todoCookie) {
+        let todoList = JSON.parse(todoCookie.split("=")[1]);
+        todoList.forEach(todo => addTodo(todo));
     }
-
-    function saveTodos() {
-        const todos = [];
-        document.querySelectorAll(".todo").forEach(todo => {
-            todos.push(todo.textContent);
-        });
-        document.cookie = "todos=" + JSON.stringify(todos) + ";path=/";
-    }
-
-    function loadTodos() {
-        const cookies = document.cookie.split("; ");
-        for (let cookie of cookies) {
-            if (cookie.startsWith("todos=")) {
-                const todos = JSON.parse(cookie.substring(6));
-                todos.forEach(todo => addTodo(todo));
-                break;
-            }
-        }
-    }
-});
+}
