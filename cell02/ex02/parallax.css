@@ -1,0 +1,42 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.parallax {
+    height: 100vh;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#section1 {
+    background-image: url('https://brit-ed.com/wp-content/uploads/2023/07/1.Beagle.jpg'); 
+}
+
+#section2 {
+    background-image: url('https://media.komchadluek.net/uploads/images/contents/w1024/2024/03/OzMN0Ktnkokbt6YL2I6Y.webp?x-image-process=style/lg-webp'); 
+}
+
+.black-section {
+    height: 50vh;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text {
+    color: white;
+    font-size: 10px;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
