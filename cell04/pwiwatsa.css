@@ -1,0 +1,591 @@
+#about {
+    scroll-margin-top: 100px; 
+}
+#project{
+    scroll-margin-top: -130px;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    background: rgba(3, 3, 3, 0.97);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    position: relative;
+    width: 100%;
+}
+
+.logo {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+/* NAVIGATION MENU  */
+.navmenu {
+    display: flex;
+    align-items: center;
+}
+
+.navmenu ul {
+    display: flex;
+}
+
+.navmenu ul li {
+    position: relative;
+}
+
+.navmenu ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    transition: 0.3s;
+}
+
+.navmenu ul li a:hover {
+    background-color: rgb(18, 18, 18);
+    border-radius: 10px;
+}
+
+/* เส้นขีดใต้ของเมนู */
+.navmenu ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0%;
+    height: 3px;
+    background: white;
+    transition: width 0.3s ease-in-out;
+}
+
+.navmenu ul li a.active::after,
+.navmenu ul li a:hover::after {
+    width: 100%;
+}
+
+/* ----------------- HAMBURGER MENU ----------------- */
+.hamburger {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    right: 100px;
+    z-index: 1100;  /* ให้ hamburger อยู่เหนือเมนู */
+}
+
+/* ----------------- RESPONSIVE ----------------- */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 10px;
+    }
+    .logo {
+        color: white;
+        text-decoration: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    /* ซ่อนเมนู */
+    .navmenu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        left: 0; 
+        background: rgba(3, 3, 3, 0.97);
+        text-align: center;
+        max-height: calc(100vh - 60px);
+        overflow-y: auto;
+    }
+
+    .navmenu ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navmenu ul li {
+        width: 100%;
+    }
+
+    .navmenu ul li a {
+        padding: 15px 0;
+        width: 100%;
+        display: block;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .navmenu ul li a:hover {
+        background-color: rgb(18, 18, 18);
+    }
+
+    .navmenu.active {
+        display: flex;
+    }
+}
+
+/* Main Section */
+.hero {
+    width: 100vw;
+    min-height: calc(100vh - 120px);
+    position: relative;
+    padding: 60px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    filter: brightness(70%) blur(1px);
+}
+
+.hero-img {
+    position: absolute;
+    top: 50%;
+    right: -70%;
+    width: 30vw;
+    height: auto;
+    transform: translateY(-50%);
+    animation: slideIn 1.5s ease-out forwards;
+    z-index: 2;
+    margin-right: 100px;
+}
+
+@keyframes slideIn {
+    from {
+        right: -50%;
+    }
+    to {
+        right: 10%;
+    }
+}
+
+.hero .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    flex: 1;
+    position: relative;
+    z-index: 10;
+    color: white;
+    text-align: left;
+    width: 40%;
+    margin-left: 10%;
+}
+
+.hero h2 {
+    margin-bottom: 10px;
+    font-size: 64px;
+    font-weight: 700;
+}
+
+.hero p {
+    margin: 5px 0 0 0;
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.hero p span {
+    letter-spacing: 1px;
+}
+
+#typed-text {
+    margin-top: 5px;
+    font-size: 28px;
+    font-weight: 600;
+    color: white;
+}
+
+/*Mobile และ Tablet*/
+@media (max-width: 768px) {
+    .hero .container {
+        width: 90%;
+        text-align: center;
+        align-items: center;
+    }
+
+    .hero h2 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 20px;
+    }
+
+    .hero-img {
+        width: 60vw;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        animation: slideIn 1.5s ease-out forwards;
+        margin-right: 0;
+        opacity: 0.5;
+    }
+
+    .hero .container {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h2 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .hero-img {
+        width: 80vw;
+        opacity: 0.5;
+    }
+
+    .hero .container {
+        width: 90%;
+    }
+}
+
+
+
+/* About Section */
+.container {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+/* จัดการ Section Title */
+.container.section-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 150px;
+}
+
+.container.section-title h2 {
+    text-decoration: underline;
+}
+
+.row {
+    display: flex;
+    align-items: center;  
+    justify-content: space-around; 
+    flex-wrap: wrap;
+}
+
+.col-lg-4 {
+    flex: 1;
+    max-width: 27%;
+}
+
+.img-fluid {
+    width: 100%;
+    max-width: 600px; 
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-left: 100px;
+}
+
+.about.content {
+    margin-top: 10px;
+    flex: 2;
+    max-width: 50%;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+ul li i {
+    color: #007bff;
+    margin-right: 8px;
+}
+
+
+@media (max-width: 992px) {
+    .row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .col-lg-4, .about.content {
+        max-width: 100%;
+    }
+
+    .img-fluid {
+        max-width: 50%;
+        margin-bottom: 20px;
+    }
+}
+
+.skills .container {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 30px;
+    background-color: #f0f4f8;
+    width: 50%;
+}
+
+.skills h2 {
+    margin-top: 70px;
+    text-decoration: underline;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 2em;
+}
+
+.skills {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    border-radius: 10px;
+}
+
+.skills .tabs {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.skills .tab {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: #4a4a4a;
+    transition: background-color 0.3s, color 0.3s;
+    border-bottom: #0056b3 3px solid;
+}
+
+.skills .tab.active {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+.skills .tab:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+.skills .content {
+    display: none;
+}
+
+.skills .content.active {
+    display: block;
+    margin: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+.skills .icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+.skills .icon {
+    width: 20%;  /* กำหนดให้ไอคอนแต่ละอันมีความกว้าง 20% (5 อันต่อแถว) */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.skills .icon img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.skills .icon span {
+    display: block;
+    font-size: 1em;
+    color: #333;
+}
+
+/* Project Section */
+.project {
+    padding: 60px 0;
+    background-color: #f4f4f4;
+}
+
+.project-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.project-details h4 {
+    font-size: 18px;
+    color: #0066cc;
+    margin-top: 15px;
+}
+
+.project-details ul {
+    list-style-type: disc;
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column; /* ทำให้รายการอยู่ในแนวตั้ง */
+    align-items: flex-start; /* ให้ bullet อยู่ทางซ้าย */
+}
+
+
+.project-details ul li {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.project-item {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project-item h3 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.project-item p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Two-column Layout Styling */
+.project-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.project-column {
+    flex: 1;
+    min-width: 45%;
+    margin-bottom: 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .project-details ul {
+        margin-left: 0;
+        align-items: center; /* จัดให้ทั้ง bullet และข้อความอยู่ตรงกลาง */
+    }
+}
+
+/* Contact Section */
+.contact {
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Grid Layout */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 คอลัมน์ */
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-item {
+    background: #ffffff;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.contact-icon {
+    font-size: 30px;
+    color: #007bff;
+    background: #e6f2ff;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 10px auto;
+}
+
+.contact-item a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 คอลัมน์สำหรับจอเล็ก */
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-grid {
+        grid-template-columns: repeat(1, 1fr); /* 1 คอลัมน์สำหรับจอเล็กมาก */
+    }
+}
