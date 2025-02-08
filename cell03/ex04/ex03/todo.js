@@ -1,14 +1,14 @@
 $(document).ready(function () {
     function escapeHTML(str) { 
-        return $("<div>").text(str).html(); // ป้องกัน XSS
+        return $("<div>").text(str).html(); 
     }
 
     function encodeBase64(str) {
-        return btoa(unescape(encodeURIComponent(str))); // Encode เป็น Base64
+        return btoa(unescape(encodeURIComponent(str))); 
     }
 
     function decodeBase64(str) {
-        return decodeURIComponent(escape(atob(str))); // Decode กลับ
+        return decodeURIComponent(escape(atob(str))); 
     }
 
     function loadTodos() {
