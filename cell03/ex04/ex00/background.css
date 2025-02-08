@@ -1,0 +1,22 @@
+body {
+    text-align: left;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+}
+
+button {
+    font-size: 20px;
+    padding: 15px 30px;
+    border-radius: 25px;
+    border: none; 
+    background: linear-gradient(to right, #f3f2f2, #a3a3a3); 
+    color: rgb(0, 0, 0); 
+    cursor: pointer;
+    transition: 0.3s; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+}
+
+button:hover {
+    transform: scale(1.05); 
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3); 
+}
